@@ -4,7 +4,7 @@ from telebot import types
 bot = telebot.TeleBot("6332328061:AAG2r6n888T7wb7WT9xa9RwZI-KUpN5oBoE")
 
 
-@bot.message_handler(content_types=['message'])
+@bot.message_handler(content_types=['text'])
 def get_text_message(message):
     if message.text == "Привет":
         bot.send_message(message.from_user.id, "Привет, я тебе расскажу как стать настоящим тестировщиком!")
