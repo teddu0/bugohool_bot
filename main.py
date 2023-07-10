@@ -4,7 +4,7 @@ from telebot import types
 bot = telebot.TeleBot("6332328061:AAG2r6n888T7wb7WT9xa9RwZI-KUpN5oBoE")
 
 
-@bot.message_handler(content_types=['text'])
+@bot.message_handler(commands=['start'])
 def start(message):
     if message.text == '👋 Поздороваться':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)  # создание новых кнопок
