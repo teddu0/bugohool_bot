@@ -6,10 +6,12 @@ bot = telebot.TeleBot("6332328061:AAG2r6n888T7wb7WT9xa9RwZI-KUpN5oBoE")
 
 @bot.message_handler(commands=['start'])
 def start(message):
-    if message.text == '👋 Поздороваться':
-        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)  # создание новых кнопок
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)  # создание новых кнопок
+    btn = types.KeyboardButton('👋 Поздороваться')
+    markup.add(btn)
+    if message.text == "👋 Поздороваться":
         bot.send_message(message.from_user.id, 'Преветствую вас Оля, Саша, тетя Марина и Даша!\nНапишите свои имя по отдельности, и я расскажу что вас сегодня ждет!',
-                         reply_markup=markup)  # ответ бота
+                             reply_markup=markup)  # ответ бота
 
 
 @bot.message_handler(content_types=['text'])
