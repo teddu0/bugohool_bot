@@ -5,7 +5,7 @@ bot = telebot.TeleBot("6332328061:AAG2r6n888T7wb7WT9xa9RwZI-KUpN5oBoE")
 
 
 @bot.message_handler(content_types=['text'])
-def get_text_messages(message):
+def start(message):
     if message.text == '👋 Поздороваться':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)  # создание новых кнопок
         bot.send_message(message.from_user.id, 'Преветствую вас Оля, Саша, тетя Марина и Даша!\nНапишите свои имя по отдельности, и я расскажу что вас сегодня ждет!',
