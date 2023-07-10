@@ -4,7 +4,6 @@ import requests
 
 TOKEN = "6332328061:AAG2r6n888T7wb7WT9xa9RwZI-KUpN5oBoE"
 URL = f"https://api.telegram.org/bot{TOKEN}/getUpdates"
-print(requests.get(URL).json())
 
 bot = telebot.TeleBot(TOKEN)
 
@@ -34,4 +33,5 @@ def get_text_message(message):
         bot.send_message(message.from_user.id, "Для этого имени нет предсказания, 😕 блин...")
 
 
+print(requests.get(URL).json())
 bot.polling(none_stop=True, interval=0)  # обязательная для работы бота часть
