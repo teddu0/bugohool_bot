@@ -1,7 +1,12 @@
 import telebot
 from telebot import types
+import requests
 
-bot = telebot.TeleBot("6332328061:AAG2r6n888T7wb7WT9xa9RwZI-KUpN5oBoE")
+TOKEN = "6332328061:AAG2r6n888T7wb7WT9xa9RwZI-KUpN5oBoE"
+URL = f"https://api.telegram.org/bot{TOKEN}/getUpdates"
+print(requests.get(URL).json())
+
+bot = telebot.TeleBot(TOKEN)
 
 
 @bot.message_handler(commands=['start'])
