@@ -15,9 +15,10 @@ bot = telebot.TeleBot(TOKEN)
 @bot.message_handler(commands=['start'])
 def start(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)  # создание новых кнопок
-    bot.send_message(message.from_user.id,
-                     '👋 Преветствую вас Оля, Саша, тетя Марина и Даша!\nНапишите свои имена по отдельности, и я расскажу что вас сегодня ждет!',
-                     reply_markup=markup)  # ответ бота
+    btn1 = types.KeyboardButton("😊 Да")
+    btn2 = types.KeyboardButton("😔 Нет")
+    markup.add(btn1, btn2)
+    bot.send_message(message.from_user.id, '👋 Вас приветствует сушибар "Сакура", хотите совершить заказ?', reply_markup=markup)  # ответ бота
 
 
 @bot.message_handler(content_types=['text'])
